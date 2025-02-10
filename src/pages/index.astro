@@ -10,66 +10,106 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Dev Project</title>
 	</head>
-	<body>
-		<h1 class="font-bold text-3xl m-5">WiCS Dev Project: Spring 2025</h1>
-		<nav>
-			<a class="m-5 link" href="#food">Food</a>
-			<a class="m-5 link" href="#places">Places</a>
-			<a class="m-5 link" href="#colors">Colors</a>
-		  </nav>
-		<div class="flex flex-col">
-			<h1 class="font-bold text-2xl m-5">My Favorite Foods</h1>
-			<div class="flex flex-row" id="food">
-				<ul class="text-2xl border-2 w-fit p-4 m-5">
+	<body class="bg-pink-200 box-border">
+		<div class="container w-[90vw] m-auto text-center pb-20">
+
+			<h1 class="font-bold text-3xl text-gray-50 bg-pink-500">WiCS Dev Project: Spring 2025</h1>
+			<nav>
+				<a class="link" href="#food">Food</a>
+				<a class="link" href="#places">Places</a>
+				<a class="link" href="#colors">Colors</a>
+			</nav>
+			<div class="flex flex-col">
+				<h1 class="font-bold text-2xl text-pink-400">My Favorite Foods</h1>
+			<div class="flex flex-row text-gray-600 gap-20 justify-center py-5" id="food">
+				<ul class="text-2xl border-2 w-fit p-15 hover:border-pink-500">
 					<li>Sushi</li>
 					<li>Pizza</li>
 					<li>Buggers</li>
 				</ul>
-				<ul class="text-2xl border-2 w-fit p-4 m-5">
+				<ul class="text-2xl border-2 w-fit p-15 hover:border-pink-500">
 					<li>Bread</li>
 					<li>Butter</li>
 					<li>Cheese</li>
 				</ul>
-				<ul class="text-2xl border-2 w-fit p-4 m-5">
+				<ul class="text-2xl border-2 w-fit p-15 hover:border-pink-500">
 					<li>Broccoli</li>
 					<li>Carrots</li>
 					<li>Muffins</li>
 				</ul>
 			</div>
-			<h1 class="font-bold text-2xl m-5">My Favorite Places</h1>
-			<div class="flex flex-col" id="places">
-				<img class="m-5 w-[200px]" src="/assets/egypt.jpg"/>
-				<img class="m-5 w-[200px]" src="/assets/paris.jpg"/>
-				<img class="m-5 w-[200px]" src="/assets/florida.jpg"/>
+			<h1 class="font-bold text-2xl text-pink-400">My Favorite Places</h1>
+			<div class="flex flex-row gap-[20px]" id="places">
+				<img class="w-[33%] places-item border-2 border-pink-400" src="/assets/egypt.jpg"/>
+				<img class="w-[33%] places-item" src="/assets/paris.jpg"/>
+				<img class="w-[33%] places-item" src="/assets/florida.jpg"/>
 			</div>
-
-			<h1 class="font-bold text-2xl m-5">My Favorite Colors</h1>
-			<div class="flex flex-row" id="colors">
-				<div class="color m-5 bg-amber-400"></div>
-				<div class="color m-5 bg-red-400"></div>
-				<div class="color m-5 bg-blue-400"></div>
+			
+			<h1 class="font-bold text-2xl text-pink-400">My Favorite Colors</h1>
+			<div class="flex flex-row my-5 m-auto gap-10" id="colors">
+				<div class="color bg-violet-200"></div>
+				<div class="color bg-violet-300"></div>
+				<div class="color bg-violet-400"></div>
 			</div>
 			
 		</div>
 		<!-- <button class="bg-blue-100 rounded-md p-2 m-5 cursor-pointer variant-default">Generate Number</button> -->
-
-		<div class="flex flex-row">
-			<div class="w-[200px] h-[280px] bg-blue-400 m-[10px]"></div>
-			<div class="w-[200px] h-[280px] bg-blue-400 m-[10px]"></div>
-			<div class="w-[200px] h-[280px] bg-blue-400 m-[10px]"></div>
+		
+		<div class="flex flex-row gap-[10px] my-10">
+			<div class="w-[33%] h-[280px] bg-pink-100"></div>
+			<div class="w-[33%] h-[280px] bg-pink-300"></div>
+			<div class="w-[33%] h-[280px] bg-pink-400"></div>
 		</div>
+		
+		<button class=" btn cursor-pointer bg-pink-300 rounded-lg hover:bg-pink-400 p-4 w-[200px] border-2 border-gray-500 font-bold mt-[20px] text-pink-100">DON'T CLICK ME</button>
+		<h1 class="popup hidden text-[35px] font-bold text-red-500 text-[40px] pt-[50px] pb-10">Told you not to..</h1>
+		<div class="imgs flex flex-row gap-20 justify-center pb-[100px]">
+		<img class="img-popup hidden w-100" src="/src/assets/2.jpeg" alt="Cat">
+		<img class="img-popup hidden w-100" src="/src/assets/4.jpeg" alt="Cat">
+		</div>
+
+		<h1 class="popup hidden text-[35px] font-bold text-pink-400 text-[40px] mt-100">Um, anyway, have a lovely day 💗</h1>
+		<div class="imgs flex flex-row gap-20 justify-center my-10">
+			<img src="/src/assets/1.jpeg" alt="" class="img-popup hidden w-100">
+			<img src="/src/assets/3.jpeg" alt="" class="img-popup hidden w-100">
+		</div>
+		
+	</div>
+
+	<script>
+		const imgs = document.querySelectorAll(".img-popup");
+		const btn = document.querySelector(".btn");
+		const popups = document.querySelectorAll('.popup');
+		btn?.addEventListener('click', ()=> {
+			popups.forEach((e)=>e.classList.toggle('hidden'));
+			imgs.forEach((e)=>e.classList.toggle('hidden'));
+		});
+	</script>
 	</body>
 </html>
 
 <style>
+
+	.hidden {
+		display: none;
+	}
+
+	h1 {
+		margin: 25px 0;
+	}
+
 	.link {
 		color: blue;
 	}
 
 	.color {
-		width: 100px;
-		height: 100px;
+		width: 200px;
+		height: 200px;
 		border: 1px solid black;
 		border-radius: 50%;
 	}
+
+	/* .places-item:hover {
+		border: 2px solid purple;
+	} */
 </style>
